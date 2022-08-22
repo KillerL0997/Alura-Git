@@ -1,0 +1,203 @@
+
+leo@Leo MINGW64 ~
+$ cd D:/proyectos/alura
+
+leo@Leo MINGW64 /d/proyectos/alura (master)
+$ dir
+Desafio\ 1  Git_y_Github  Logica\ de\ programacion  Primeras\ paguinas\ web
+
+leo@Leo MINGW64 /d/proyectos/alura (master)
+$ cd Git_y_Github
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ ls
+index.html
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git init
+Reinitialized existing Git repository in D:/Proyectos/Alura/Git_y_Github/.git/
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git add .
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git commit -m "Creando archivo index.html con lista de cursos"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'leo@Leo.(none)')
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git config --global user.email "leonelvallejos3gmail.com"
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ ^C
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git config --global user.name "leonel"
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git commit -m "Creando archivo index.html con lista de cursos"
+[master (root-commit) f58a288] Creando archivo index.html con lista de cursos
+ 1 file changed, 15 insertions(+)
+ create mode 100644 index.html
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git add .
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git commit -m "Se hizo un cambio en el titulo del documento"
+[master 0c616e6] Se hizo un cambio en el titulo del documento
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git log
+commit 0c616e6bcae724b2f6135e58fba47b328f818f1e (HEAD -> master)
+Author: leonel <leonelvallejos3gmail.com>
+Date:   Mon Aug 22 11:00:53 2022 -0300
+
+    Se hizo un cambio en el titulo del documento
+
+commit f58a288c6eb7823db9df35f31f430385319be5dc
+Author: leonel <leonelvallejos3gmail.com>
+Date:   Mon Aug 22 10:57:00 2022 -0300
+
+    Creando archivo index.html con lista de cursos
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git log --oneline
+0c616e6 (HEAD -> master) Se hizo un cambio en el titulo del documento
+f58a288 Creando archivo index.html con lista de cursos
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git log -p
+commit 0c616e6bcae724b2f6135e58fba47b328f818f1e (HEAD -> master)
+Author: leonel <leonelvallejos3gmail.com>
+Date:   Mon Aug 22 11:00:53 2022 -0300
+
+    Se hizo un cambio en el titulo del documento
+
+diff --git a/index.html b/index.html
+index 0993728..6c4dba2 100644
+--- a/index.html
++++ b/index.html
+@@ -2,7 +2,7 @@
+ <html lang = "en">
+ <head>
+      <meta charset = "UTF-8">
+-     <title> Cursos de Alura </title>
++     <title> Curso de Alura </title>
+ </head>
+ <body>
+      <ul>
+
+commit f58a288c6eb7823db9df35f31f430385319be5dc
+Author: leonel <leonelvallejos3gmail.com>
+Date:   Mon Aug 22 10:57:00 2022 -0300
+
+    Creando archivo index.html con lista de cursos
+
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..0993728
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,15 @@
++<!DOCTYPE html>
++<html lang = "en">
++<head>
++     <meta charset = "UTF-8">
++     <title> Cursos de Alura </title>
++</head>
++<body>
++     <ul>
++         <li> Vagrant </li>
++         <li> Docker </li>
++         <li> Ansible </li>
++         <li> Integración continua </li>
++     </ul>
++</body>
++</html>
+\ No newline at end of file
+:q (para salir)
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git log --pretty="format:%H"
+0c616e6bcae724b2f6135e58fba47b328f818f1e
+f58a288c6eb7823db9df35f31f430385319be5dc
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git log --pretty="format:%h %s"
+0c616e6 Se hizo un cambio en el titulo del documento
+f58a288 Creando archivo index.html con lista de cursos
+
+leo@Leo MINGW64 /d/proyectos/alura/Git_y_Github (master)
+$ git log --pretty="format:%h %s %ae"
+0c616e6 Se hizo un cambio en el titulo del documento leonelvallejos3gmail.com
+f58a288 Creando archivo index.html con lista de cursos leonelvallejos3gmail.com
